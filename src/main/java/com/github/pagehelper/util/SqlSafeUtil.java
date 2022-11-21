@@ -51,7 +51,7 @@ public class SqlSafeUtil {
      * @return true 非法 false 合法
      */
     public static boolean check(String value) {
-        if (value == null) {
+        if (value == null || value.length() == 0) {
             return false;
         }
         // 不允许使用任何函数（不能出现括号），否则无法检测后面这个注入 order by id,if(1=2,1,(sleep(100)));
